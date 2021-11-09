@@ -1,3 +1,8 @@
+
+// Files
+@import 'reset';
+
+// Fonts
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 // Variables
@@ -31,60 +36,6 @@ $vw-1000: 1000vw;
 $vw-100: 100vw;
 
 $m-auto: auto;
-
-/*Css reset*/
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: $w-100;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-
-body {
-    line-height: 1;
-}
-
-ol,
-ul {
-    list-style: none;
-}
-
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-
-    border-spacing: 0;
-}
-
-/*Styles*/
 
 /*Header*/
 body {
@@ -1100,16 +1051,20 @@ input.message {
         right: 0;
     }
 
-    .menu ul {
-        flex-direction: $flex-column;
-    }
+    .menu {
+        ul {
+            flex-direction: $flex-column;
 
-    .menu li a {
-        font-weight: 700;
-        height: 80px;
-        font-size: 27px;
-        margin-left: 50px;
-        border: none;
+            li {
+                a {
+                    font-weight: 700;
+                    height: 80px;
+                    font-size: 27px;
+                    margin-left: 50px;
+                    border: none;
+                }
+            }
+        }
     }
 
     .menu li.active a {
@@ -1145,20 +1100,28 @@ input.message {
         max-width: 580px;
     }
 
-    .section-client .slidearea {
-        width: $vw-100;
+    .section-client {
+        .slidearea {
+            width: $vw-100;
+        }
     }
 
-    .awards div img {
-        padding: 35px 75px;
+    .awards {
+        div {
+            img {
+                padding: 35px 75px;
+            }
+        }
     }
 
     .section-price {
         flex-wrap: wrap;
     }
 
-    .section-premium .slidearea {
-        flex-direction: $flex-column;
+    .section-premium {
+        .slidearea {
+            flex-direction: $flex-column;
+        }
     }
 
     .section-premium-content {
@@ -1194,22 +1157,27 @@ input.message {
         flex-direction: column-reverse;
     }
 
-    .section-footer .newsletter {
-        align-items: $flex-align-center;
+    .section-footer {
+        .newsletter {
+            align-items: $flex-align-center;
+
+            input {
+                width: $w-80;
+            }
+        }
+
+        .quote {
+            width: $w-80;
+            margin: 50px auto;
+        }
+
+        .social {
+            .copy {
+                margin-top: 50px;
+            }
+        }
     }
 
-    .section-footer .newsletter input {
-        width: $w-80;
-    }
-
-    .section-footer .quote {
-        width: $w-80;
-        margin: 50px auto;
-    }
-
-    .section-footer .social .copy {
-        margin-top: 50px;
-    }
 }
 
 @media (max-width: 450px) {
@@ -1234,29 +1202,37 @@ input.message {
         right: 0;
     }
 
-    .menu ul {
-        flex-direction: $flex-column;
+    .menu {
+        ul {
+            flex-direction: $flex-column;
+
+            li {
+                a {
+                    font-weight: 700;
+                    height: 60px;
+                    font-size: 18px;
+                    margin-left: 30px;
+                    border: none;
+                }
+
+            }
+        }
     }
 
-    .menu li a {
-        font-weight: 700;
-        height: 60px;
-        font-size: 18px;
-        margin-left: 30px;
-        border: none;
-    }
 
     .menu li.active a {
         border: 0;
         color: $primary-color;
     }
 
-    .banner h1 {
-        font-size: 32px;
-    }
+    .banner {
+        h1 {
+            font-size: 32px;
+        }
 
-    .banner h2 {
-        font-size: 12px;
+        h2 {
+            font-size: 12px;
+        }
     }
 
     .section-about-us {
@@ -1302,18 +1278,22 @@ input.message {
         max-width: 280px;
     }
 
-    .section-client .slidearea {
-        width: $vw-100;
+    .section-client {
+        .slidearea {
+            width: $vw-100;
+        }
     }
 
     .section-team-testimony {
         width: $w-80;
     }
 
-    .awards div {
-        display: $d-flex;
-        flex-direction: $flex-column;
-        align-items: $flex-align-center;
+    .awards {
+        div {
+            display: $d-flex;
+            flex-direction: $flex-column;
+            align-items: $flex-align-center;
+        }
     }
 
     .section-price {
@@ -1328,18 +1308,21 @@ input.message {
         margin-top: 40px;
     }
 
-    .section-premium .slidearea {
-        flex-direction: $flex-column;
+    .section-premium {
+        .slidearea {
+            flex-direction: $flex-column;
+        }
     }
 
     .section-premium-imgarea {
         display: $d-flex;
         justify-content: $justify-center;
+
+        img {
+            width: $w-80;
+        }
     }
 
-    .section-premium-imgarea img {
-        width: $w-80;
-    }
 
     .section-premium-content {
         margin-top: 75px;
@@ -1347,17 +1330,21 @@ input.message {
     }
 
 
-    .social-media div {
-        flex-direction: $flex-column;
+    .social-media {
+        div {
+            flex-direction: $flex-column;
+        }
+
+        .item {
+            flex-direction: row;
+            padding: 25px 0;
+        }
     }
 
-    .social-media .item {
-        flex-direction: row;
-        padding: 25px 0;
-    }
-
-    .section-form form {
-        width: 90%;
+    .section-form {
+        form {
+            width: 90%;
+        }
     }
 
     #form-desc {
@@ -1402,20 +1389,24 @@ input.message {
         flex-direction: column-reverse;
     }
 
-    .section-footer .newsletter {
-        align-items: $flex-align-center;
-    }
+    .section-footer {
+        .newsletter {
+            align-items: $flex-align-center;
 
-    .section-footer .newsletter input {
-        width: $w-80;
-    }
+            input {
+                width: $w-80;
+            }
+        }
 
-    .section-footer .quote {
-        width: $w-80;
-        margin: 50px auto;
-    }
+        .quote {
+            width: $w-80;
+            margin: 50px auto;
+        }
 
-    .section-footer .social .copy {
-        margin-top: 50px;
+        .social {
+            .copy {
+                margin-top: 50px;
+            }
+        }
     }
 }
