@@ -1,4 +1,3 @@
-
 // Files
 @import 'reset';
 
@@ -94,18 +93,17 @@ header {
                 display: $d-flex;
                 align-items: $flex-align-center;
                 border-bottom: 5px solid $black;
+
+                &:hover {
+                    border-bottom: 5px solid $primary-color;
+                    color: $gray-1
+                }
+
             }
 
         }
 
     }
-
-}
-
-
-.menu li a:hover {
-    border-bottom: 5px solid $primary-color;
-    color: $gray-1;
 }
 
 /* Button */
@@ -294,10 +292,10 @@ header {
         font-size: $base-font;
         color: #999;
     }
-}
 
-.section-service:first-child {
-    border-left: 1px solid $gray-3;
+    &:first-child {
+        border-left: 1px solid $gray-3;
+    }
 }
 
 /*Section projects*/
@@ -322,16 +320,16 @@ header {
         border-left: 1px solid $gray-1;
         color: $gray-2;
         border-bottom: 3px solid #EEE;
+
+        &:hover {
+            border-bottom: 3px solid $primary-color;
+            cursor: pointer;
+        }
+
+        &:first-child {
+            border-left: none;
+        }
     }
-}
-
-.section-projects-filters li:hover {
-    border-bottom: 3px solid $primary-color;
-    cursor: pointer;
-}
-
-.section-projects-filters li:first-child {
-    border-left: none;
 }
 
 .section-projects-filters li.active {
@@ -483,11 +481,11 @@ header {
         height: 25px;
         background-color: $gray-1;
         border-radius: 13px;
-    }
-}
 
-.section-team-social a:hover {
-    background: $primary-color;
+        &:hover {
+            background: $primary-color;
+        }
+    }
 }
 
 /*Client area*/
@@ -594,10 +592,10 @@ header {
     flex-direction: $flex-column;
     align-items: $flex-align-center;
     justify-content: $justify-center;
-}
 
-.section-price-card:first-child {
-    margin-left: 0;
+    &:first-child {
+        margin-left: 0;
+    }
 }
 
 .section-price-card-title {
@@ -625,6 +623,10 @@ header {
 
     p {
         margin-top: 10px;
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
 
     .gray-line {
@@ -635,9 +637,7 @@ header {
     }
 }
 
-.section-price-list p:first-child {
-    margin-top: 0;
-}
+
 
 .section-price-button {
     display: $d-inline-block;
@@ -651,15 +651,15 @@ header {
     text-align: center;
     text-decoration: none;
     background-color: $gray-3;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $primary-color;
+    }
 }
 
 .section-price-button.active {
     background: $primary-color;
-}
-
-.section-price-button:hover {
-    cursor: pointer;
-    background-color: $primary-color;
 }
 
 /*Section Premium*/
@@ -839,6 +839,10 @@ header {
     .row {
         height: 40px;
         margin-top: 60px;
+
+        &:first-child {
+            margin-top: 20px;
+        }
     }
 
     form {
@@ -863,11 +867,11 @@ header {
         margin: $m-auto;
         margin-top: 60px;
         background-color: $primary-color;
-    }
-}
 
-.section-form .row:first-child {
-    margin-top: 20px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 input.email {
@@ -882,10 +886,6 @@ input.email {
 input.subject,
 input.message {
     width: $w-100;
-}
-
-.section-form a:hover {
-    cursor: pointer;
 }
 
 /*Section Map*/
@@ -1017,13 +1017,14 @@ input.message {
             width: 30%;
             text-align: center;
             padding: 10px;
+
+            &:hover {
+                background: $primary-color;
+            }
         }
     }
 }
 
-.section-footer .social .images a:hover {
-    background: $primary-color;
-}
 
 .section-footer .social .images .active {
     background-color: $primary-color;
@@ -1090,10 +1091,10 @@ input.message {
 
     .section-service {
         min-width: 50%;
-    }
 
-    .section-service:first-child {
-        border-left: 0;
+        &:first-child {
+            border-left: 0;
+        }
     }
 
     .section-team {
@@ -1255,10 +1256,10 @@ input.message {
 
     .section-service {
         min-width: 50%;
-    }
 
-    .section-service:first-child {
-        border-left: 0;
+        &:first-child {
+            border-left: 0;
+        }
     }
 
     .section-projects-filters {
@@ -1300,12 +1301,12 @@ input.message {
         flex-wrap: wrap;
     }
 
-    .section-price-card:first-child {
-        margin-top: 0;
-    }
-
     .section-price-card {
         margin-top: 40px;
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
 
     .section-premium {
@@ -1351,8 +1352,12 @@ input.message {
         font-size: 10px;
     }
 
-    .section-form .row:first-child {
-        display: $d-flex;
+    .section-form {
+        .row {
+            &:first-child {
+                display: $d-flex;
+            }
+        }
     }
 
     input.name,
